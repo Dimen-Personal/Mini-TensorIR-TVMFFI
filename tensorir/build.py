@@ -6,7 +6,7 @@ from matmul import MatMulModule     # 从matmul.py文件里导入我们之前定
 
 
 def main():
-    mod = MatmulModule
+    mod = MatMulModule
     
     print("====TensorIR Module====")
     print(mod.script())
@@ -33,7 +33,7 @@ def main():
     # LLVM Code Generation
     #   ↓
     # Executable
-    executable = tvm.tirx.compile(mod, target = target)
+    executable = tvm.compile(mod, target = target)
     print("\n===== Compilation Finished =====")
 
     print("Executable type:")
@@ -51,7 +51,7 @@ def main():
     
     
     
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
 
     
