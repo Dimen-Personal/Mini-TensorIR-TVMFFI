@@ -1,7 +1,7 @@
 from tvm.script import ir as I, tirx as T
 
 
-@I.ir_module
+@I.ir_module     # TVM compiler 管理一组 IR function 的顶层容器
 class MatMulModule:
     @T.prim_func(s_tir=True)
     def matmul(
