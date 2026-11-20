@@ -2,7 +2,23 @@
 import tvm
 import tvm.tirx
 
-from matmul import MatMulModule     # 从matmul.py文件里导入我们之前定义MatmulMoudule
+from tensorir.matmul import MatMulModule     # 从matmul.py文件里导入我们之前定义MatmulMoudule
+
+
+
+
+
+def build_matmul():
+    mod = MatMulModule
+
+    target = "llvm"
+    
+    executable = tvm.compile(mod, target = target)
+    
+    return executable
+
+
+
 
 
 def main():
@@ -33,7 +49,7 @@ def main():
     # LLVM Code Generation
     #   ↓
     # Executable
-    executable = tvm.compile(mod, target = target)
+    executable = build_matmul()
     print("\n===== Compilation Finished =====")
 
     print("Executable type:")
