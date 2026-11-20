@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/phase1_matmul.dir/src/phase1_matmul.cpp.o -o phase1_matmul
